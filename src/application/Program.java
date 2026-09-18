@@ -4,8 +4,6 @@ import model.dao.DaoFactory;
 import model.dao.SellerDao;
 import model.entities.Department;
 import model.entities.Seller;
-
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -37,5 +35,10 @@ public class Program {
         seller.setName("Martinha Salviano");
         sellerDao.update(seller);
         IO.println("Update completed");
+
+        IO.println("\n===== TEST 5: seller delete =====");
+        int id = Integer.parseInt(IO.readln("Enter id for delete test: "));
+        sellerDao.deleteById(id);
+        IO.println("Delete completed");
     }
 }
